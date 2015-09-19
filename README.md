@@ -1,5 +1,3 @@
-# mocking
-
 # Functional tests (demo)
 
 ## Installation
