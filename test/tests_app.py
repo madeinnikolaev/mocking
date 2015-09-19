@@ -10,7 +10,7 @@ mock_post_urlopen_read = '''<html>
 <body>
 	<img width="145" height="276" data-zoom-url="http://i2.rozetka.ua/goods/852861/record_852861554.jpg" id="base_image" name="base_image" itemprop="image" title="Haircut machine ZELMER ZHC 39012 (39Z012)" alt="Haircut machine ZELMER ZHC 39012 (39Z012)" src="http://i1.rozetka.ua/goods/852861/record_852861596.jpg">
 	<div name="prices_active_element_original">
-		<span itemprop="price">3434</span>
+		<span itemprop="price">768</span>
 	</div>
 </body>
 </html>'''
@@ -44,6 +44,10 @@ class AddProductViewTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         products = Product.objects.all()
         self.assertEqual(len(products), 1)
+        product = products[0]
+        self.assertEqual(product.title, 'Haircut machine ZELMER ZHC 39012 (39Z012)')
+        self.assertEqual(product.price, 768.0)
+        self.assertEqual(product.image, '/media\\record_852861596.jpg')
 
     @patch('app.views.urllib2.urlopen', side_effect=mock_urlopen_page_not_found)
     def test_post_page_not_found(self, urlopen):

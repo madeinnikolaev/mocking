@@ -39,7 +39,7 @@ class AddProductView(View):
         urllib.urlretrieve(image_src, image_my_src)
         price = soup.find('div', {'name': 'prices_active_element_original'}).find('span', {'itemprop': 'price'}).text
 
-        product = Product(title='test', image='/{0}'.format(my_image_path), price=float(price))
+        product = Product(title=title, image='/{0}'.format(my_image_path), price=float(price))
         product.save()
 
         return HttpResponseRedirect('/list/')
