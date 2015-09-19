@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-theme.min.css">
+
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    {% block curr_page_js %}{% endblock %}
+    {% block curr_css %}{% endblock %}
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container ">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-tabs navbar-left">
+                    <li role="presentation" {% if messages.request.META.PATH_INFO == '/' %}class="active"{% endif %}><a href="/">Add</a></li>
+                    <li role="presentation" {% if messages.request.META.PATH_INFO == '/list/' %}class="active"{% endif %}><a href="/list/">All items</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

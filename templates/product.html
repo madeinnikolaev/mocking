@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Single product{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <h5>Works</h5>
+        <div>
+            <h5>{{ product.title }}</h5>
+            <p>{{ product.price|floatformat:2 }} uah</p>
+            <img src="{{ product.image }}" />
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}
