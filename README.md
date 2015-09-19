@@ -2,7 +2,7 @@
 
 ## Installation
 
-git clone https://github.com/madeinnikolaev/mocking.git
+`$ git clone https://github.com/madeinnikolaev/mocking.git`
 
 cd mocking/
 
