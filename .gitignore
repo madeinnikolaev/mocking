@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+*.iml
+
+
+.idea/
+static/
+media/
+
+fishing/settings_local.py
